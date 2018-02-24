@@ -25,14 +25,14 @@ char *ft_words(char *str, int *start)
 
 	j = 0;
 	word = (char*)malloc(sizeof(char) * 4096);
-	while ((str[*start] == ' ' || str[*start] == '\t' || str[*start] == '\n') && str[*start])
-		*start = *start + 1;
 	while (str[*start] != ' ' && str[*start] != '\t' && str[*start] != '\n' && str[*start])
 	{
 		word[j] = str[*start];
 		j++;
 		*start = *start + 1;
 	}
+    while ((str[*start] == ' ' || str[*start] == '\t' || str[*start] == '\n') && str[*start])
+        *start = *start + 1;
 	word[j] = '\0';
 	return(word);
 }
